@@ -1,0 +1,6 @@
+<header class="site-header">
+  <div class="top-bar">
+    {% render 'marquee', text: settings['top-bar'].settings.topbar_text %}
+  </div>
+  {% render 'main-header', payment_methods: settings.payments.settings.payment_methods %}
+</header>
