@@ -1,6 +1,7 @@
 <section class="featured-products">
   <h2>{{ settings['featured-products'].settings.heading }}</h2>
   <div class="product-list">
+    {% assign products = collections.all_products %}
     {% for product in products %}
       {% render 'product-card', product: product %}
     {% endfor %}
