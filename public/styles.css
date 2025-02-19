@@ -10,7 +10,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
-  color: #333;
+  color: white;
   line-height: 1.6;
 }
 
@@ -58,7 +58,7 @@ img {
   fill: #aa80ff;
   flex-shrink: 0;
 }
-.marquee::before, .marquee::after {
+.marquee::before {
   content: "";
   position: absolute;
   top: 0;
@@ -66,14 +66,19 @@ img {
   height: 100%;
   pointer-events: none;
   z-index: 2;
-}
-.marquee::before {
-  left: 0;
   background: linear-gradient(to right, rgb(119, 46, 247), rgba(119, 46, 247, 0));
+  left: 0;
 }
 .marquee::after {
-  right: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 45px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
   background: linear-gradient(to left, rgb(119, 46, 247), rgba(119, 46, 247, 0));
+  right: 0;
 }
 .marquee span {
   display: inline-block;

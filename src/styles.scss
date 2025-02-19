@@ -1,3 +1,19 @@
+$primary-color: #772ef7;
+$secondary-color: #aa80ff;
+$text-color: white;
+$gradient-width: 45px;
+
+@mixin gradient-fade($direction) {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: $gradient-width;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(to #{$direction}, rgba(119, 46, 247, 1), rgba(119, 46, 247, 0));
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +23,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
-  color: #333;
+  color: $text-color;
   line-height: 1.6;
 }
 
@@ -33,9 +49,8 @@ img {
   padding: 20px 0;
 }
 
-
 .top-bar {
-  background: #772ef7;
+  background: $primary-color;
   padding: 10px 0;
   overflow: hidden;
 }
@@ -46,37 +61,26 @@ img {
   position: relative;
 
   &__inner {
-    display: flex; 
+    display: flex;
     align-items: center;
     animation: marquee-scroll 40s linear infinite;
   }
 
-   &__icon {
+  &__icon {
     width: 16px;
     height: 16px;
-    fill: #aa80ff; 
-    flex-shrink: 0; 
-  }
-
-   &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 45px;
-    height: 100%;
-    pointer-events: none;
-    z-index: 2;
+    fill: $secondary-color;
+    flex-shrink: 0;
   }
 
   &::before {
+    @include gradient-fade(right);
     left: 0;
-    background: linear-gradient(to right, rgba(119, 46, 247, 1), rgba(119, 46, 247, 0));
   }
 
   &::after {
+    @include gradient-fade(left);
     right: 0;
-    background: linear-gradient(to left, rgba(119, 46, 247, 1), rgba(119, 46, 247, 0));
   }
 
   span {
@@ -84,7 +88,7 @@ img {
     padding: 0 10px;
     font-size: 14px;
     font-weight: bold;
-    color: white;
+    color: $text-color;
     text-transform: uppercase;
   }
 }
