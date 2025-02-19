@@ -1,5 +1,11 @@
 {
   "sections": {
+    "top-bar": {
+      "type": "top-bar",
+      "settings": {
+        "topbar_text": "FREE SHIPPING FOR ORDERS OVER $100"
+      }
+    },
     "featured-products": {
       "type": "featured-products",
       "settings": {

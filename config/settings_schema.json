@@ -1,5 +1,16 @@
 [
   {
+    "name": "Top Bar",
+    "settings": [
+      {
+        "type": "text",
+        "id": "topbar_text",
+        "label": "Top Bar Text",
+        "default": "FREE SHIPPING FOR ORDERS OVER $100"
+      }
+    ]
+  },
+  {
     "name": "Featured Products",
     "settings": [
       {

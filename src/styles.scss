@@ -32,3 +32,68 @@ img {
   margin: 0 auto;
   padding: 20px 0;
 }
+
+
+.top-bar {
+  background: #772ef7;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+
+  &__inner {
+    display: flex; 
+    align-items: center;
+    animation: marquee-scroll 40s linear infinite;
+  }
+
+   &__icon {
+    width: 16px;
+    height: 16px;
+    fill: #aa80ff; 
+    flex-shrink: 0; 
+  }
+
+   &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 45px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(119, 46, 247, 1), rgba(119, 46, 247, 0));
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(119, 46, 247, 1), rgba(119, 46, 247, 0));
+  }
+
+  span {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+  }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
