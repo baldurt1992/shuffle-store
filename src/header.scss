@@ -1,0 +1,71 @@
+.site-header {
+  width: 100%;
+  color: #fff;
+}
+
+.main-header {
+  width: 100%;
+  background-color: $black-color;
+  padding: 18px 0;
+
+  .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__payments {
+    background-color: #000;
+    border: 1px solid $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 20px;
+    border-radius: 50px;
+  }
+
+  &__payments h3 {
+    font-family: $font-navigation;
+    font-weight: 200;
+    font-size: $subtitle-size;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__cart {
+    display: flex;
+    justify-content: center;
+    background-color: $primary-color;
+    padding: 8px 20px 8px 20px;
+    border-radius: 8px;
+    max-width: 75px;
+    
+  } 
+
+  &__icon {
+    width: 40px;
+  }
+}

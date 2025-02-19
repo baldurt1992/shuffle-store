@@ -1,18 +1,7 @@
-$primary-color: #772ef7;
-$secondary-color: #aa80ff;
-$text-color: white;
-$gradient-width: 45px;
-
-@mixin gradient-fade($direction) {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: $gradient-width;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-  background: linear-gradient(to #{$direction}, rgba(119, 46, 247, 1), rgba(119, 46, 247, 0));
-}
+@import 'variables';
+@import 'topbar';
+@import 'header';
+@import 'logo';
 
 * {
   margin: 0;
@@ -49,55 +38,4 @@ img {
   padding: 20px 0;
 }
 
-.top-bar {
-  background: $primary-color;
-  padding: 10px 0;
-  overflow: hidden;
-}
 
-.marquee {
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-
-  &__inner {
-    display: flex;
-    align-items: center;
-    animation: marquee-scroll 40s linear infinite;
-  }
-
-  &__icon {
-    width: 16px;
-    height: 16px;
-    fill: $secondary-color;
-    flex-shrink: 0;
-  }
-
-  &::before {
-    @include gradient-fade(right);
-    left: 0;
-  }
-
-  &::after {
-    @include gradient-fade(left);
-    right: 0;
-  }
-
-  span {
-    display: inline-block;
-    padding: 0 10px;
-    font-size: 14px;
-    font-weight: bold;
-    color: $text-color;
-    text-transform: uppercase;
-  }
-}
-
-@keyframes marquee-scroll {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}

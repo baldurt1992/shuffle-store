@@ -36,6 +36,17 @@
           { "label": "Terms of Service", "url": "/terms-of-service" }
         ]
       }
+    },
+    "payments": {
+      "type": "payments",
+      "settings": {
+        "payment_methods": [
+          { "name": "Visa", "image": "visa.png" },
+          { "name": "Mastercard", "image": "mastercard.png" },
+          { "name": "American Express", "image": "amex.png" },
+          { "name": "PayPal", "image": "paypal.png" }
+        ]
+      }
     }
   }
 }
