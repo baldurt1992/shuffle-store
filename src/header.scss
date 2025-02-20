@@ -17,6 +17,16 @@
     padding: 0 20px;
   }
 
+  &__burger {
+    display: none;
+  }
+
+  &__burger .burger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
   &__logo {
     display: flex;
     align-items: center;
@@ -67,5 +77,36 @@
 
   &__icon {
     width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header .container {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .main-header__nav {
+    display: none; 
+  }
+
+  .main-header__cart {
+    max-width: 60px;
+    width: 60px;
+    height: 50px;
+    padding: 6px; 
+  }
+
+  .main-header__burger {
+    display: block; 
+}
+}
+
+@media (max-width: 1024px) {
+   .main-header__payments {
+    display: none;
   }
 }

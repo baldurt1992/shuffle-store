@@ -21,3 +21,15 @@
     font-weight: 900;
   }
 }
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    font-size: 32px;
+  }
+}

@@ -1,5 +1,25 @@
 <div class="main-header">
   <div class="container">
+    <div class="main-header__burger">
+      <button class="burger-menu" id="openMenu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#772ef7"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="4" y1="8" x2="20" y2="8"/>
+          <line x1="4" y1="16" x2="20" y2="16"/>
+        </svg>
+      </button>
+      {% render 'mobile-menu' %}
+    </div>
+
     <div class="main-header__logo">
       <a href="/">
         {% render 'logo' %}
