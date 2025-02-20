@@ -1,8 +1,6 @@
 import "./styles.scss";
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Gradiweb is online!!!");
-
   const openMenu = document.querySelector("#openMenu");
   const closeMenu = document.querySelector("#closeMenu");
   const mobileMenu = document.querySelector("#mobileMenu");

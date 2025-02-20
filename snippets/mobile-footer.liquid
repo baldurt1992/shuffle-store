@@ -1,0 +1,108 @@
+<footer class="footer-mobile">
+  <div class="footer-mobile__container">
+    <div class="footer-mobile__center">
+      <nav class="footer-mobile__nav">
+        {% if settings.footer.settings.primary_links %}
+          <ul class="footer-mobile__nav-primary">
+            {% for link in settings.footer.settings.primary_links %}
+              <li class="footer-mobile__nav-item">
+                <a href="{{ link.url }}" class="footer-mobile__nav-link">{{ link.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if settings.footer.settings.secondary_links %}
+          <ul class="footer-mobile__nav-secondary">
+            {% for link in settings.footer.settings.secondary_links %}
+              <li class="footer-mobile__nav-item">
+                <a href="{{ link.url }}" class="footer-mobile__nav-link">{{ link.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </nav>
+
+      <div class="footer-mobile__payments">
+        <div>
+          <h3 class="footer-mobile__payments-title">We accept all major cards, PayPal & crypto</h3>
+        </div>
+
+        <div class="footer-mobile__payments-icons">
+          {% if payment_methods %}
+            {% for payment in payment_methods %}
+              <img
+                src="/assets/{{ payment.image }}"
+                alt="{{ payment.name }}"
+                class="footer-mobile__payments-icon"
+                width="auto"
+                height="auto"
+              >
+            {% endfor %}
+          {% else %}
+            <p class="footer-mobile__payments-message">No payment methods available.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-mobile__newsletter">
+      <label for="mobile-newsletter" class="footer-mobile__newsletter-label"
+        >Subscribe and receive drop notifications</label
+      >
+      <div class="footer-mobile__newsletter-wrapper">
+        <input type="email" id="mobile-newsletter" class="footer-mobile__newsletter-input" placeholder="Enter Email">
+        <button class="footer-mobile__newsletter-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#772ef7"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer-mobile__bottom">
+      <div class="footer-mobile__logo">
+        <div>
+          {% render 'logo' %}
+        </div>
+        <div class="footer-mobile__social">
+          <a
+            href="{{ settings.footer.settings.social_links.facebook | default: '#' }}"
+            class="footer-mobile__social-link"
+            target="_blank"
+            >FACEBOOK</a
+          >
+          <a
+            href="{{ settings.footer.settings.social_links.x | default: '#' }}"
+            class="footer-mobile__social-link"
+            target="_blank"
+            >X(TWITTER)</a
+          >
+          <a
+            href="{{ settings.footer.settings.social_links.instagram | default: '#' }}"
+            class="footer-mobile__social-link"
+            target="_blank"
+            >INSTAGRAM</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-mobile__legal">
+      <p class="footer-mobile__legal-text">
+        {{ settings.footer.settings.footer_text | default: '© 2024, Default Footer Text' }}
+      </p>
+    </div>
+  </div>
+</footer>

@@ -64,8 +64,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Gradiweb is online!!!");
-
   const openMenu = document.querySelector("#openMenu");
   const closeMenu = document.querySelector("#closeMenu");
   const mobileMenu = document.querySelector("#mobileMenu");
