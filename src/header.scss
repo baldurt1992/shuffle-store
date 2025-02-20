@@ -3,9 +3,31 @@
   color: #fff;
 }
 
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: $primary-color; 
+}
+
+.sticky-container {
+  position: fixed;
+  top: 40px; 
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: $black-color;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sticky {
+  background-color: rgba(29, 29, 31, 0.8); 
+  backdrop-filter: blur(10px); 
+}
+
 .main-header {
   width: 100%;
-  background-color: $black-color;
   padding: 18px 0;
 
   .container {
@@ -72,7 +94,6 @@
     padding: 8px 20px 8px 20px;
     border-radius: 8px;
     max-width: 75px;
-    
   } 
 
   &__icon {
@@ -88,7 +109,6 @@
     justify-content: space-between;
   }
 
-
   .main-header__nav {
     display: none; 
   }
@@ -102,7 +122,7 @@
 
   .main-header__burger {
     display: block; 
-}
+  }
 }
 
 @media (max-width: 1024px) {
