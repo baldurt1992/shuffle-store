@@ -7,7 +7,16 @@
   <title>Shopify Simulator | Gradiweb</title>
 </head>
 <body>
-  {% include 'header.liquid' %}
+  {% include 'header' %}
+
+  <div class="main-content">
+  </div>
+
+{% include 'footer', payment_methods: settings.payments.settings.payment_methods %}
+{% include 'mobile-footer', payment_methods: settings.payments.settings.payment_methods %}
+
+
+
   <script src="/main.js"></script>
 </body>
 </html>

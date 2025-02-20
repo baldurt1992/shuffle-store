@@ -64,9 +64,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const openMenu = document.getElementById("openMenu");
-  const closeMenu = document.getElementById("closeMenu");
-  const mobileMenu = document.getElementById("mobileMenu");
+  const openMenu = document.querySelector("#openMenu");
+  const closeMenu = document.querySelector("#closeMenu");
+  const mobileMenu = document.querySelector("#mobileMenu");
+  const stickyContainer = document.querySelector("#stickyContainer");
 
   if (openMenu && closeMenu && mobileMenu) {
     openMenu.addEventListener("click", function () {
@@ -77,6 +78,14 @@ document.addEventListener("DOMContentLoaded", function () {
       mobileMenu.classList.remove("active");
     });
   }
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) {
+      stickyContainer.classList.add("sticky");
+    } else {
+      stickyContainer.classList.remove("sticky");
+    }
+  });
 });
 
 })();
