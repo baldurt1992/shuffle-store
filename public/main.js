@@ -63,7 +63,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.scss */ "./src/styles.scss");
 
 
-console.log("Gradiweb is online!!!");
+document.addEventListener("DOMContentLoaded", function () {
+  const openMenu = document.getElementById("openMenu");
+  const closeMenu = document.getElementById("closeMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (openMenu && closeMenu && mobileMenu) {
+    openMenu.addEventListener("click", function () {
+      mobileMenu.classList.add("active");
+    });
+
+    closeMenu.addEventListener("click", function () {
+      mobileMenu.classList.remove("active");
+    });
+  }
+});
 
 })();
 
