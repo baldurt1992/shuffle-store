@@ -199,7 +199,7 @@ The mobile footer is a simplified version of the desktop footer for mobile devic
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone <[repository-url](https://github.com/baldurt1992/shuffle-store.git)>
 Install dependencies (using npm or yarn):
 
 ## Install dependencies (using npm or yarn):
