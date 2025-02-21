@@ -1,14 +1,54 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'header';
+@import 'footer';
+@import 'hero';
+@import 'carousel';
+@import 'mobile-menu';
+@import 'mobile-footer';
+@import 'marquee-hero';
+@import 'logo';
+@import 'topbar';
+@import 'buttons';
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: #333;
-  line-height: 1.6;
+  font-family: $font-text;
+  background-color: $black-color;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/noise-texture.png'); 
+  background-size: 200px;
+  background-repeat: repeat;
+  background-blend-mode: overlay; 
+  opacity: 0.06; 
+  z-index: -1; 
+  pointer-events: none; 
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.main-content {
+  flex: 1;
+  margin: 160px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
@@ -27,8 +67,10 @@ img {
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
+  max-width: $container-max-width;
   margin: 0 auto;
-  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $container-padding;
 }

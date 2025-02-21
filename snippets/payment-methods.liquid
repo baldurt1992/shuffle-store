@@ -1,0 +1,22 @@
+<div class="main-header__payments">
+  <h3>Accepted Payment Methods</h3>
+
+  {% if settings.payments.settings.payment_methods %}
+    <ul>
+      {% for payment in settings.payments.settings.payment_methods %}
+        <li>
+          <img
+            src="{{ payment.image | asset_url }}"
+            alt="{{ payment.name }}"
+            class="main-header__icon"
+            width="40px"
+            height="40px"
+          >
+          {{ payment.name }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No payment methods available.</p>
+  {% endif %}
+</div>

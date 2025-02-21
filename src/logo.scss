@@ -1,0 +1,33 @@
+@import 'mixins';
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: $title-size;
+  font-weight: bold;
+
+  &__text {
+    @include text-style($font-brand-primary, inherit, bold, $text-color);
+  }
+
+  &__separator {
+    margin: 0 5px;
+    color: $primary-color;
+  }
+
+  &__store {
+    @include text-style($font-brand-secondary, inherit, 900, inherit);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    font-size: $title-size;
+  }
+}

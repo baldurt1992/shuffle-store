@@ -7,7 +7,26 @@
   <title>Shopify Simulator | Gradiweb</title>
 </head>
 <body>
-  {% include 'featured-products.liquid' %}
+  {% include 'header' %}
+
+  <div class="main-content">
+    {% include 'hero-section', 
+      background_image: settings.hero-banner.background_image,
+      button_text: settings.hero-banner.button_text,
+      button_link: settings.hero-banner.button_link,
+      marquee_text: settings.hero-banner.marquee_text
+    %}
+    
+    {% include 'carousel-section',
+      images: settings.carousel.settings.images,
+      visible_images: settings.carousel.settings.visible_images %}
+  </div>
+
+{% include 'footer', payment_methods: settings.payments.settings.payment_methods %}
+{% include 'mobile-footer', payment_methods: settings.payments.settings.payment_methods %}
+
+
+
   <script src="/main.js"></script>
 </body>
 </html>

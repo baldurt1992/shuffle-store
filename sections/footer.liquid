@@ -1,0 +1,87 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__left">
+      <div class="site-footer__logo">
+        {% render 'logo' %}
+      </div>
+      <p class="site-footer__text">
+        {{ settings.footer.settings.footer_text | default: '© 2024, Default Footer Text' }}
+      </p>
+    </div>
+
+    <div class="site-footer__center">
+      <nav class="site-footer__nav">
+        {% if settings.footer.settings.primary_links %}
+          <ul class="site-footer__primary-links">
+            {% for link in settings.footer.settings.primary_links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if settings.footer.settings.secondary_links %}
+          <ul class="site-footer__secondary-links">
+            {% for link in settings.footer.settings.secondary_links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.label }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </nav>
+
+      <div class="site-footer__payments">
+        <h3 class="site-footer__payments-title">We accept all major cards, PayPal & crypto</h3>
+
+        <div class="site-footer__payments">
+          {% if payment_methods %}
+            {% for payment in payment_methods %}
+              <img
+                src="/assets/{{ payment.image }}"
+                alt="{{ payment.name }}"
+                class="site-footer__payments-item"
+                width="auto"
+                height="auto"
+              >
+            {% endfor %}
+          {% else %}
+            <p>No payment methods available.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__right">
+      <div class="site-footer__newsletter">
+        <label for="newsletter">Subscribe and receive drop notifications</label>
+        <div class="site-footer__newsletter-wrapper">
+          <input type="email" id="newsletter" placeholder="Enter Email">
+          <button class="site-footer__newsletter-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#772ef7"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="site-footer__social">
+        <a href="{{ settings.footer.settings.social_links.facebook | default: '#' }}" target="_blank">FACEBOOK</a>
+        <a href="{{ settings.footer.settings.social_links.x | default: '#' }}" target="_blank">X(TWITTER)</a>
+        <a href="{{ settings.footer.settings.social_links.instagram | default: '#' }}" target="_blank">INSTAGRAM</a>
+      </div>
+    </div>
+  </div>
+</footer>

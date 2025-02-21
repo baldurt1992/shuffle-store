@@ -1,0 +1,76 @@
+<div class="main-header">
+  <div class="container">
+    <div class="main-header__burger">
+      <button class="burger-menu" id="openMenu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#772ef7"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="4" y1="8" x2="20" y2="8"/>
+          <line x1="4" y1="16" x2="20" y2="16"/>
+        </svg>
+      </button>
+      {% render 'mobile-menu' %}
+    </div>
+
+    <div class="main-header__logo">
+      <a href="/">
+        {% render 'logo' %}
+      </a>
+    </div>
+
+    <div class="main-header__payments">
+      <h3>We Accept</h3>
+      {% if payment_methods %}
+        {% for payment in payment_methods %}
+          <img
+            src="/assets/{{ payment.image }}"
+            alt="{{ payment.name }}"
+            class="main-header__icon"
+            width="auto"
+            height="auto"
+          >
+        {% endfor %}
+      {% else %}
+        <p>No payment methods available.</p>
+      {% endif %}
+    </div>
+
+    <div class="main-header__right">
+      <nav class="main-header__nav">
+        <ul class="main-header__menu">
+          <li class="main-header__item"><a href="#" class="main-header__link">All Products</a></li>
+          <li class="main-header__item"><a href="#" class="main-header__link">Collections</a></li>
+        </ul>
+      </nav>
+
+      <button type="button" class="main-header__btn">
+        <div class="main-header__cart">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35px"
+            height="35px"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#fff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 6h15l-1.5 9H7.5L6 6z"/>
+            <circle cx="9" cy="20" r="1.5"/>
+            <circle cx="18" cy="20" r="1.5"/>
+            <path d="M6 6l-2-2"/>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

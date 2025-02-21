@@ -1,0 +1,161 @@
+@import 'mixins';
+
+.site-footer {
+  width: 100%;
+  background-color: transparent;
+  padding: 30px 0;
+  color: $text-color;
+  flex-shrink: 0;
+  margin-top: auto;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    gap: 90px;
+  }
+
+  &__logo {
+    @include text-style($font-brand-secondary, 1.5rem, bold, $text-color);
+  }
+
+  &__text {
+    @include text-style($font-text, 0.875rem, normal, $text-color);
+    line-height: 1.8;
+    max-width: 250px;
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 90px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__primary-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    a {
+      @include text-style($font-text, 1.6rem, normal, $text-color);
+    }
+  }
+
+  &__secondary-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    a {
+      @include text-style($font-text, 0.875rem, normal, $text-color);
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 80px;
+    max-width: 225px;
+  }
+
+  &__newsletter {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid transparent;
+      background-color: $black-color;
+      color: $text-color;
+      border-radius: $btn-border-radius;
+      transition: border $transition-speed ease-in-out;
+
+      &:focus {
+        outline: none;
+        border: 1px solid $primary-color;
+      }
+
+      &::placeholder {
+        color: #bbbbbb;
+        font-weight: 600;
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__newsletter-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__social {
+    display: flex;
+    gap: 15px;
+
+    a {
+      @include text-style($font-navigation, 0.6rem, normal, $text-color);
+    }
+  }
+
+  &__payments {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    &-title {
+      @include text-style($font-text, 14px, 600, $text-color);
+    }
+
+    &-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+    }
+
+    &-item {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+@media (max-width: 1281px) {
+  .site-footer {
+    display: none;
+  }
+}

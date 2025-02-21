@@ -1,0 +1,33 @@
+@import 'mixins';
+
+.hero {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  max-width: $container-max-width;
+  padding: 0 $container-padding;
+
+  &__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $btn-border-radius;
+    margin-bottom: 30px;
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 12px;
+    left: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 40vh;
+  }
+
+  .hero__content {
+    display: none;
+  }
+}

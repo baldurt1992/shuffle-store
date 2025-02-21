@@ -1,0 +1,57 @@
+@import 'mixins';
+
+.top-bar {
+  background: $primary-color;
+  padding: 10px 0;
+  overflow: hidden;
+  font-family: $font-navigation;
+  height: 37px;
+  position: relative;
+
+  &::before {
+    @include gradient-fade(right, $primary-color);
+    left: 0;
+  }
+
+  &::after {
+    @include gradient-fade(left, $primary-color);
+    right: 0;
+  }
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    animation: marquee-scroll 50s linear infinite;
+    width: max-content;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    fill: $secondary-color;
+    flex-shrink: 0;
+  }
+
+  span {
+    display: inline-block;
+    padding: 0 10px;
+    @include text-style($font-navigation, 14px, bold, $text-color);
+    text-transform: uppercase;
+  }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

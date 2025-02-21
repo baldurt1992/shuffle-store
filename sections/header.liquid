@@ -1,0 +1,8 @@
+<header class="site-header" id="stickyHeader">
+  <div class="top-bar">
+    {% render 'marquee', text: settings['top-bar'].settings.topbar_text %}
+  </div>
+  <div class="sticky-container" id="stickyContainer">
+    {% render 'main-header', payment_methods: settings.payments.settings.payment_methods %}
+  </div>
+</header>

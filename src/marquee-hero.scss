@@ -1,0 +1,40 @@
+@import 'mixins';
+
+.marquee--hero {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  font-size: 2rem;
+  background-color: transparent;
+  position: relative;
+
+  &::before {
+    @include gradient-fade(right, #2f2b35);
+    left: 0;
+  }
+
+  &::after {
+    @include gradient-fade(left, #2f2b35);
+    right: 0;
+  }
+
+  .marquee__inner {
+    gap: 20px;
+  }
+
+  .marquee__text {
+    @include text-style($font-brand-secondary, 3rem, bold, $text-color);
+  }
+
+  .marquee__icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee--hero {
+    .marquee__text {
+      font-size: 2rem;
+    }
+  }
+}
