@@ -32,6 +32,7 @@ The hero section is the first section users see. It contains a background image,
   button_link: settings['hero-banner'].settings.button_link, 
   marquee_text: settings['hero-banner'].settings.marquee_text 
 %}
+```
 
 ## Documentation
 
@@ -89,6 +90,7 @@ The main header includes a logo, payment methods, and navigation links (All Prod
     </div>
   </div>
 </div>
+```
 ## Documentation
 
 - **Payment Methods**: Dynamically rendered from `settings_data.json`.
@@ -134,6 +136,7 @@ The footer includes primary and secondary navigation links, payment method icons
     </div>
   </div>
 </footer>
+```
 ## Documentation
 
 - **Dynamic Links**: All links (primary and secondary) and social media links are populated from `settings_data.json`.
@@ -169,6 +172,7 @@ The carousel section dynamically displays products, with a button to reveal more
   </div>
   {% render 'button', text: 'View All', class: 'carousel__btn', type: 'button' %}
 </div>
+```
 ## Documentation
 
 - **Visibility Logic**: Products are shown or hidden based on the `visible_images` value.
@@ -202,13 +206,12 @@ Install dependencies (using npm or yarn):
 
 ```bash
 npm install
-
+```
 ## Run the project locally:
 
 ```bash
 npm start
-Run the project locally:
-
+```
 
 The page will be accessible at http://localhost:3000.
 
@@ -218,5 +221,3 @@ The page will be accessible at http://localhost:3000.
 - **Liquid Templating**: Dynamic data is rendered using Liquid templating language, with proper checks for missing data (default values).
 - **JavaScript**: We use clean, reusable JavaScript to manage user interactions (like the sticky header and mobile menu).
 - **Version Control**: Git is used for version control. Ensure to follow best practices for branching, commits, and pull requests.
-
----
