@@ -52,7 +52,8 @@
           { "name": "Visa", "image": "visa.png" },
           { "name": "Mastercard", "image": "mastercard.png" },
           { "name": "American Express", "image": "amex.png" },
-          { "name": "PayPal", "image": "paypal.png" }
+          { "name": "PayPal", "image": "paypal.png" },
+          { "name": "Discover", "image": "discover.png" }
         ]
       }
     }

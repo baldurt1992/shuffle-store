@@ -13,7 +13,7 @@
 
 .sticky-container {
   position: fixed;
-  top: 40px; 
+  top: 36.5px; 
   left: 0;
   width: 100%;
   z-index: 999;
@@ -23,7 +23,7 @@
 
 .sticky {
   background-color: rgba(29, 29, 31, 0.8); 
-  backdrop-filter: blur(10px); 
+  backdrop-filter: blur(5px); 
 }
 
 .main-header {
