@@ -1,0 +1,14 @@
+<section class="hero">
+  <img
+    src="/assets/{{ background_image }}"
+    alt="Hero Image"
+    class="hero__background"
+    width="auto"
+    height="auto"
+  >
+
+  <div class="hero__content">
+    {% render 'button', text: button_text, type: 'button', link: button_link %}
+  </div>
+  {% render 'marquee', text: marquee_text, class: 'marquee--hero' %}
+</section>
