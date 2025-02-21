@@ -1,0 +1,44 @@
+@import 'variables';
+
+@mixin button-style($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: $font-brand-secondary;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: $btn-padding;
+  border: none;
+  cursor: pointer;
+  border-radius: $btn-border-radius;
+  transition: background-color $transition-speed ease-in-out;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+@mixin hover-effect($color) {
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+}
+
+@mixin text-style($font, $size, $weight, $color) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin gradient-fade($direction, $color) {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: $gradient-width;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(to #{$direction}, $color, rgba(119, 46, 247, 0));
+}

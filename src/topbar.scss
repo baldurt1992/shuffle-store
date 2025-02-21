@@ -1,14 +1,4 @@
-
-@mixin gradient-fade($direction) {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: $gradient-width;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-  background: linear-gradient(to #{$direction}, #772ef7, rgba(119, 46, 247, 0));
-}
+@import 'mixins';
 
 .top-bar {
   background: $primary-color;
@@ -16,18 +6,18 @@
   overflow: hidden;
   font-family: $font-navigation;
   height: 37px;
+  position: relative;
 
-    &::before {
-    @include gradient-fade(right);
+  &::before {
+    @include gradient-fade(right, $primary-color);
     left: 0;
   }
 
   &::after {
-    @include gradient-fade(left);
+    @include gradient-fade(left, $primary-color);
     right: 0;
   }
 }
-
 
 .marquee {
   white-space: nowrap;
@@ -37,7 +27,7 @@
   &__inner {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
     animation: marquee-scroll 50s linear infinite;
     width: max-content;
   }
@@ -49,14 +39,10 @@
     flex-shrink: 0;
   }
 
-
-
   span {
     display: inline-block;
     padding: 0 10px;
-    font-size: 14px;
-    font-weight: bold;
-    color: $text-color;
+    @include text-style($font-navigation, 14px, bold, $text-color);
     text-transform: uppercase;
   }
 }

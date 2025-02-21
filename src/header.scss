@@ -1,29 +1,33 @@
+@import 'mixins';
+
 .site-header {
   width: 100%;
-  color: #fff;
+  color: $text-color;
+  position: fixed;
+  z-index: 1000;
 }
 
 .top-bar {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  background-color: $primary-color; 
+  z-index: 1001;
+  background-color: $primary-color;
 }
 
 .sticky-container {
   position: fixed;
-  top: 36.5px; 
+  top: 36.5px;
   left: 0;
   width: 100%;
   z-index: 999;
   background-color: $black-color;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color $transition-speed ease-in-out;
 }
 
 .sticky {
-  background-color: rgba(29, 29, 31, 0.8); 
-  backdrop-filter: blur(5px); 
+  background-color: rgba(29, 29, 31, 0.8);
+  backdrop-filter: blur(5px);
 }
 
 .main-header {
@@ -32,12 +36,12 @@
 
   &__burger {
     display: none;
-  }
 
-  &__burger .burger-menu {
-    background: none;
-    border: none;
-    cursor: pointer;
+    .burger-menu {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
   }
 
   &__logo {
@@ -54,12 +58,10 @@
     gap: 10px;
     padding: 5px 20px;
     border-radius: 50px;
-  }
 
-  &__payments h3 {
-    font-family: $font-navigation;
-    font-weight: 200;
-    font-size: $subtitle-size;
+    h3 {
+      @include text-style($font-navigation, $subtitle-size, 200, $text-color);
+    }
   }
 
   &__right {
@@ -79,13 +81,9 @@
   }
 
   &__cart {
-    display: flex;
-    justify-content: center;
-    background-color: $primary-color;
-    padding: 8px 20px 8px 20px;
-    border-radius: 8px;
     max-width: 75px;
-  } 
+    @include button-style($primary-color, $text-color);
+  }
 
   &__icon {
     width: 40px;
@@ -107,23 +105,23 @@
   }
 
   .main-header__nav {
-    display: none; 
+    display: none;
   }
 
   .main-header__cart {
     max-width: 60px;
     width: 60px;
     height: 50px;
-    padding: 6px; 
+    padding: 6px;
   }
 
   .main-header__burger {
-    display: block; 
+    display: block;
   }
 }
 
 @media (max-width: 1024px) {
-   .main-header__payments {
+  .main-header__payments {
     display: none;
   }
 }

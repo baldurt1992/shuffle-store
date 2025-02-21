@@ -1,0 +1,5 @@
+@import 'mixins';
+
+.btn {
+  @include button-style($primary-color, $text-color);
+}
