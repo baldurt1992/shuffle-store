@@ -90,6 +90,12 @@
   &__icon {
     width: 40px;
   }
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 768px) {

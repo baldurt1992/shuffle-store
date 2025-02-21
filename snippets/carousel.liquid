@@ -1,0 +1,42 @@
+<div class="carousel">
+  <div class="carousel__container">
+    {% for image in images %}
+      <div class="carousel__item-wrapper {% if forloop.index > visible_images %}hidden{% else %}show{% endif %}">
+        <!-- Imagen con fondo degradado -->
+        <div class="carousel__item">
+          <img src="/assets/{{ image.url }}" alt="{{ image.alt }}" width="auto" height="auto">
+        </div>
+
+        <!-- Contenido fuera del borde degradado -->
+        <div class="carousel__content">
+          <div class="carousel__info">
+            <p class="carousel__item-name">{{ image.alt }}</p>
+            <p class="carousel__item-price">{{ image.price }}</p>
+          </div>
+          <button type="button" class="carousel__cart-btn">
+            <div class="carousel__cart-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 6h15l-1.5 9H7.5L6 6z"/>
+                <circle cx="9" cy="20" r="1.5"/>
+                <circle cx="18" cy="20" r="1.5"/>
+                <path d="M6 6l-2-2"/>
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% render 'button', text: 'View All', class: 'carousel__btn', type: 'button' %}
+</div>
