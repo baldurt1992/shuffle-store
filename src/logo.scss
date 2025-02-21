@@ -1,14 +1,13 @@
+@import 'mixins';
+
 .logo {
   display: flex;
   align-items: center;
-    font-size: 32px;
+  font-size: $title-size;
   font-weight: bold;
-   font-size: $title-size;
-  
+
   &__text {
-    font-family: $font-brand-primary;
-    color: $text-color;
-   
+    @include text-style($font-brand-primary, inherit, bold, $text-color);
   }
 
   &__separator {
@@ -17,8 +16,7 @@
   }
 
   &__store {
-    font-family: $font-brand-secondary;
-    font-weight: 900;
+    @include text-style($font-brand-secondary, inherit, 900, inherit);
   }
 }
 
@@ -30,6 +28,6 @@
 
 @media (min-width: 1024px) {
   .logo {
-    font-size: 32px;
+    font-size: $title-size;
   }
 }

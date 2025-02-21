@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileMenu = document.querySelector("#mobileMenu");
   const stickyContainer = document.querySelector("#stickyContainer");
   const viewAllBtn = document.querySelector(".carousel__btn");
-  const isMobile = window.innerWidth <= 768;
 
   function updateHiddenItems() {
     return document.querySelectorAll(".carousel__item-wrapper.hidden");
@@ -30,10 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       stickyContainer.classList.remove("sticky");
     }
-
-    if (allowScrollReveal) {
-      showItemsOnScroll();
-    }
   });
 
   function showItemsOnScroll() {
@@ -48,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
         !item.classList.contains("show")
       ) {
         setTimeout(() => {
-          console.log(`Mostrando elemento ${index + 1}:`, item.classList);
           item.classList.remove("hidden");
           item.classList.add("show");
         }, index * 100);
@@ -64,10 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
     viewAllBtn.addEventListener("click", function (event) {
       event.preventDefault();
 
-      console.log(
-        "View All clickeado. Ahora los elementos aparecerán con scroll."
-      );
-
       allowScrollReveal = true;
       showItemsOnScroll();
       viewAllBtn.style.display = "none";
@@ -79,13 +69,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll(".carousel__item-wrapper");
 
     if (isMobileNow) {
-      console.log("📌 Mobile view detected: Mostrando todos los elementos.");
       items.forEach((item) => {
         item.classList.remove("hidden");
         item.classList.add("show");
       });
     } else {
-      console.log("💻 Desktop view detected: Aplicando lógica de scroll.");
       items.forEach((item, index) => {
         if (index >= 4) {
           item.classList.add("hidden");

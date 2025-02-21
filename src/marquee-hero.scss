@@ -1,36 +1,28 @@
-@mixin gradient-fade-hero($direction) {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: $gradient-width;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-  background: linear-gradient(to #{$direction}, #2f2b35, rgba(119, 46, 247, 0));
-}
+@import 'mixins';
 
 .marquee--hero {
   width: 100vw;
-  margin-left: calc(-50vw + 50%); 
+  margin-left: calc(-50vw + 50%);
   font-size: 2rem;
   background-color: transparent;
-    &::before {
-    @include gradient-fade-hero(right);
+  position: relative;
+
+  &::before {
+    @include gradient-fade(right, #2f2b35);
     left: 0;
   }
 
   &::after {
-    @include gradient-fade-hero(left);
+    @include gradient-fade(left, #2f2b35);
     right: 0;
   }
+
   .marquee__inner {
     gap: 20px;
   }
 
   .marquee__text {
-    font-weight: bold;
-    font-family: $font-brand-secondary;
-    font-size: 3rem; 
+    @include text-style($font-brand-secondary, 3rem, bold, $text-color);
   }
 
   .marquee__icon {
