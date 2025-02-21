@@ -56,6 +56,64 @@
           { "name": "Discover", "image": "discover.png" }
         ]
       }
+    },
+    "carousel": {
+      "type": "carousel",
+      "settings": {
+        "visible_images": 4,
+        "images": [
+          {
+            "url": "shuffle_crewneck_black.avif",
+            "alt": "Black Crewneck",
+            "price": "49.99 USD"
+          },
+          {
+            "url": "shuffle_crewneck_grey.avif",
+            "alt": "Grey Crewneck",
+            "price": "49.99 USD"
+          },
+          {
+            "url": "shuffle_essentials.webp",
+            "alt": "Essentials Collection",
+            "price": "89.99 USD"
+          },
+          {
+            "url": "shuffle_hat_black.avif",
+            "alt": "Black Hat",
+            "price": "29.99 USD"
+          },
+          {
+            "url": "shuffle_hat_purple.avif",
+            "alt": "Purple Hat",
+            "price": "29.99 USD"
+          },
+          {
+            "url": "shuffle_hoodie_black.avif",
+            "alt": "Black Hoodie",
+            "price": "59.99 USD"
+          },
+          {
+            "url": "shuffle_hoodie_purple.avif",
+            "alt": "Purple Hoodie",
+            "price": "59.99 USD"
+          },
+          {
+            "url": "shuffle_t_shirt_white.avif",
+            "alt": "White T-Shirt",
+            "price": "19.99 USD"
+          },
+          {
+            "url": "shuffle_t-shirt_black.avif",
+            "alt": "Black T-Shirt",
+            "price": "19.99 USD"
+          },
+          {
+            "url": "waifu_body_pillow.avif",
+            "alt": "Waifu Pillow",
+            "price": "888.88 USD"
+          }
+        ]
+      }
     }
   }
 }
